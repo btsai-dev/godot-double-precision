@@ -6,7 +6,7 @@ on:
 env:
   # Used for the cache key. Add version suffix to force clean build.
   GODOT_BASE_BRANCH: 4.4
-  SCONSFLAGS: verbose=yes warnings=extra werror=yes module_text_server_fb_enabled=yes strict_checks=yes
+  SCONSFLAGS: verbose=yes warnings=extra werror=yes module_text_server_fb_enabled=yes strict_checks=yes precision=double
 
 jobs:
   build-macos:
@@ -28,7 +28,7 @@ jobs:
             cache-name: macos-template
             target: template_release
             tests: true
-            sconsflags: debug_symbols=no
+            sconsflags: debug_symbols=no precision=double
             bin: ./bin/godot.macos.template_release.universal
             cache-limit: 1
 
